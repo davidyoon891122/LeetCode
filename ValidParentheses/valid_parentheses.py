@@ -43,11 +43,13 @@ test_4 = "[" # result False case
 test_5 = "" # result False case
 test_6 = "[)(]" # result False case 
 test_7 = "{[]}" # result True case 
-print("Test Result: {}".format(isValid(test_1)))
-print("Test Result: {}".format(isValid(test_2)))
-print("Test Result: {}".format(isValid(test_3)))
-print("Test Result: {}".format(isValid(test_4)))
-print("Test Result: {}".format(isValid(test_5)))
-print("Test Result: {}".format(isValid(test_6)))
-print("Test Result: {}".format(isValid(test_7)))
-# print("Test Result: {}".format(isValid(test_2)))
+
+tests = [
+    test_1, test_2,
+    test_3, test_4,
+    test_5, test_6,
+    test_7
+]
+
+for index, value in enumerate(tests):
+    print("Test_{}: {} , Result: {}".format(index + 1, value ,isValid(value)))
