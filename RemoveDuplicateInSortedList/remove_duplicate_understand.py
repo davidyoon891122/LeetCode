@@ -18,21 +18,24 @@ Return k after placing the final result in the first k slots of nums.
 Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
 """
 from typing import List
-case_1 = [1, 1, 2]
+
 def removeDuplicates(nums: List[int]) -> int:
     j = 0
-    result = 1
+    result = 0
     for i in range(1, len(nums)):
         if nums[i] != nums[j]:
             j += 1
-            nums[i], nums[j] = nums[j], nums[i]
-            result += 1
-    print("nums: {}".format(nums))
-    return result
+            print("j: {}, i: {}".format(j, i))
+            nums[j], nums[i] = nums[i], nums[j]
+        print("step: {}, nums: {}".format(i, nums))
+        
+
+        
+
 
 first_example = [0, 1, 1, 2, 2, 3, 3]
 second_example = [1, 1, 2]
 
 print(removeDuplicates(first_example))
 
-print(removeDuplicates(second_example))
+# print(removeDuplicates(second_example))
