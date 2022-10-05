@@ -34,8 +34,8 @@ def removeDuplicates(nums: List[int]) -> int:
 
 
 first_example = [0, 1, 1, 2, 2, 3, 3]
-second_example = [1, 1, 2]
+second_example = [0, 1, 2]
 
-print(removeDuplicates(first_example))
+print(removeDuplicates(second_example))
 
 # print(removeDuplicates(second_example))

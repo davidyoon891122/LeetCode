@@ -7,6 +7,8 @@ The relative order of the elements may be changed.
 from typing import List
 
 def removeElement(nums: List[int], val: int) -> int:
+    if nums[0] == val:
+        nums[0], nums[-1] = nums[-1], nums[0]
     result = 0
     j = 0
     for i in range(1, len(nums)):
@@ -18,10 +20,8 @@ def removeElement(nums: List[int], val: int) -> int:
     return result
 
 
-
-
 ex_1 = [5, 2, 3, 0, 0, 2, 0]
 # ex_2 = [3, 2, 2, 3]
-result = removeElement(ex_1, 0)
+result = removeElement(ex_1, 5)
 # result_2 = removeElement(ex_2, 3)
 print(result)
