@@ -1,27 +1,22 @@
-"""
-Given a sorted array of distinct integers and a target value,
-
-return the index if the target is found. If not, return the index where it would be if it were inserted in order.
-
-You must write an algorithm with O(log n) runtime complexity.
-"""
 
 from typing import List
 
 def search_insert(nums: List[int], target: int) -> int:
-    low = 0
-    high = len(nums) - 1
-
-    while low <= high:
-        pivot = (low + high) // 2
-        print("pivot: {}".format(pivot))
-        if nums[pivot] == target:
-            return pivot
-        elif nums[pivot] > target: 
-            high = pivot - 1
+    left = 0
+    right = len(nums) - 1
+    while left <= right:
+        # checking middle position
+        idx = (left + right) // 2
+        num = nums[idx]
+        if num == target:
+            return idx
+        # halving the range
+        if num < target:
+            left = idx + 1
         else:
-            low = pivot + 1
-    return low
+            right = idx - 1
+    # target not  found
+    return left
 
 
     
@@ -52,4 +47,3 @@ for i in range(len(examples)):
         print("Pass")
     else:
         print("Fail")
-
