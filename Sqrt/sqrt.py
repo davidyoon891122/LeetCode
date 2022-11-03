@@ -6,10 +6,9 @@ For example, do not use pow(x, 0.5) in c++ or x ** 0.5 in python.
 class Solution:
     def my_sqrt(self, x: int) -> int:
         r = x
-        while r * r > x:
+        while int(r * r) > x :
             r = (r + x/r) / 2
-            print(r)
-        return r 
+        return int(r) 
 
 
 x_1 = 4
@@ -17,4 +16,4 @@ x_2 = 8
 x_3 = 25
 
 s = Solution()
-print(s.my_sqrt(25))
+print(s.my_sqrt(5))
