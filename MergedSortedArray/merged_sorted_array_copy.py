@@ -12,44 +12,17 @@ from typing import List
 
 class Solution:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int):
-        if m == 0:
-            nums1 = nums2
-            print(nums1)
-            return
-        elif n == 0:
-            print(nums1)
-            return
-        elif m == 0 and n == 0:
-            nums1 = []
-            return
-
-        nums1 = nums1[:m]
-        nums2 = nums2[:n]
-        first = 0
-        last = m
-        pivot = (first + last) // 2
-        for i in range(n):
-            target = nums2[i]
-            while True:
-                # 2
-                last = len(nums1)
-                pivot = (first + last) // 2
-                if target == nums1[pivot]:
-                   nums1.insert(pivot, target)
-                   break
-                elif target > nums1[pivot]:
-                    if first != m: 
-                        first = pivot + 1
-                    else:
-                        nums1.insert(pivot + 1, target)
-                        break
-                elif target < nums1[pivot]:
-                    if last != 0:
-                        last = pivot - 1
-                    else:
-                        nums1.insert(pivot, target)
-                        break
-        nums1 = nums1
+        while m > 0 and n > 0:
+            if nums1[m - 1] >= nums2[n - 1]:
+                nums1[m+n-1] = nums1[m-1]
+                m -= 1
+            else:
+                nums1[m+n-1] = nums2[n-1]
+                n -= 1
+            
+        print(n)
+        if n > 0:
+            nums1[:n] = nums2[:n]
         print(nums1)
 
 
