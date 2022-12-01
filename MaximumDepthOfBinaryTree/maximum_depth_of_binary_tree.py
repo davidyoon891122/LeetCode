@@ -1,0 +1,48 @@
+"""
+Given the root of a binary tree, return its maximum depth.
+A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+"""
+
+from typing import Optional
+from typing import List
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if root == None:
+            return 0
+        depth = 0
+        result = []
+        result = self.preOrder(root, result, depth)
+        return max(result)
+
+    def preOrder(self, node: Optional[TreeNode], result: [], depth: int) -> [int]:
+        if node == None:
+            return
+        
+        depth += 1
+        result.append(depth)
+        self.preOrder(node.left, result, depth)
+        self.preOrder(node.right, result, depth)
+        return result
+    
+
+
+node1 = TreeNode(3)
+node2 = TreeNode(9)
+node3 = TreeNode(20)
+node4 = TreeNode(15)
+node5 = TreeNode(7)
+
+node1.left = node2
+node1.right = node3
+node3.left = node4
+node3.right = node5
+
+s = Solution()
+print(s.maxDepth(node1))
