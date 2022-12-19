@@ -23,3 +23,4 @@ result = s.generate(numRows)
 print("pascal: {}".format(result))
 
 # Core concept is sum of prev array's specific values
+# O(n^2) time 

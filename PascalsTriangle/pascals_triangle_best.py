@@ -10,7 +10,7 @@ class Solution:
         for numRow, row in enumerate(ret): # [[], [], [], [], []]
             currentRow = numRow + 1
             while len(row) < currentRow: # row should be bigger than currentRow if 1 len(row) must be 2
-                if len(row) == 0 or len(row) == currentRow-1:
+                if len(row) == 0 or len(row) == currentRow-1: # Add append(1) when first index and last index
                     row.append(1)
                 else:
                     print(row)
