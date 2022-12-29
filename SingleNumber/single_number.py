@@ -7,7 +7,6 @@ from typing import List
 
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        print("sigleNumber: {}".format(nums))
         nums_dic = {}
 
         for i in range(len(nums)):
@@ -15,7 +14,6 @@ class Solution:
                 nums_dic[nums[i]] = 1
             else:
                 nums_dic[nums[i]] += 1
-        print(nums_dic)
 
         for key, value in nums_dic.items():
             if value == 1:
