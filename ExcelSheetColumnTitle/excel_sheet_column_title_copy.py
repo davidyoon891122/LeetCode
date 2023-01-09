@@ -19,5 +19,5 @@ class Solution:
 
 s = Solution()
 
-result = s.convertToTitle(1000)
+result = s.convertToTitle(701)
 print(result)
