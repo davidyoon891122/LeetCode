@@ -9,10 +9,10 @@ class Solution:
         ans = 0
         for i in range(32):
             ans = (ans << 1) + (n & 1)
-            print("ans: {}".format(ans))
+            print("ans: {}, n:{}".format(ans, n))
             n >>= 1
         return ans
 
 
 s = Solution()
-print(s.reverseBits(43261596))
+print(s.reverseBits(10))
