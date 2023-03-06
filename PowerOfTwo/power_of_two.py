@@ -8,9 +8,7 @@ class Solution:
     def isPowerOfTwo(self, n: int) -> bool:
         if n == 1:
             return True
-        if n == 0:
-            return False
-        if n < 0:
+        if n < 1:
             return False
         
         target = n
@@ -22,11 +20,7 @@ class Solution:
             if remainer == 1:
                 return False
         return True
-            
 
-
-
-n = 2
 s = Solution()
 
 for i in range(100):

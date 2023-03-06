@@ -5,13 +5,17 @@ Given an integer num, repeatedly add all its digits until the result has only on
 class Solution:
     def addDigits(self, num: int) -> int:
         res = num
-        while res >= 10:
-            temp = 0    
-            num_list = list(str(res))
-            for i in num_list:
-                temp += int(i)
-            res = temp
-        return res            
+        while res > 9:
+            res_list = list(str(res))
+            result = 0
+            for i in res_list:
+                result += int(i)
+            
+            res = result
+        return res
+
+
+             
 
 
 
