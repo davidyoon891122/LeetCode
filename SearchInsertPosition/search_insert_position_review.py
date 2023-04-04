@@ -21,7 +21,7 @@ def search_insert(nums: List[int], target: int) -> int:
         else:
             last = pivot - 1
     
-    return len(nums) 
+    return first
                 
             
 
