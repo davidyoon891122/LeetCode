@@ -9,19 +9,21 @@ You must write an algorithm with O(log n) runtime complexity.
 from typing import List
 
 def search_insert(nums: List[int], target: int) -> int:
-    low = 0
-    high = len(nums) - 1
+    first = 0
+    last = len(nums) - 1
 
-    while low <= high:
-        pivot = (low + high) // 2
+    while first <= last:
+        pivot = (first + last) // 2
         if nums[pivot] == target:
             return pivot
-        elif nums[pivot] > target:
-            high = pivot - 1
+        elif nums[pivot] < target:
+            first = pivot + 1 
         else:
-            low = pivot + 1
+            last = pivot - 1
     
-    return nums
+    return len(nums) 
+                
+            
 
 
     
