@@ -6,8 +6,6 @@ from typing import List
 
 class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        print(nums1, nums2)
-
         set_num1 = set(nums1)
         set_num2 = set(nums2)
 
@@ -17,7 +15,6 @@ class Solution:
             if num in set_num2:
                 result.append(num)
 
-        print(result)
         return result
 
 
