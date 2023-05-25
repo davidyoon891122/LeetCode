@@ -5,7 +5,6 @@ Each letter in magazine can only be used once in ransomNote.
 
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        print(ransomNote)
         magazine_dic = {}
         for char in magazine:
             if char in magazine_dic:
