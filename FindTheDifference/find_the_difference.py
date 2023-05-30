@@ -12,7 +12,6 @@ class Solution:
                     char_dic[char] += 1
                 else:
                     char_dic[char] = 1
-            print(char_dic)
             for char in s:
                 if char in char_dic:
                     if char_dic[char] == 0:
@@ -26,7 +25,6 @@ class Solution:
                     char_dic[char] += 1
                 else:
                     char_dic[char] = 1
-            print(char_dic)
             for char in t:
                 if char in char_dic:
                     if char_dic[char] == 0:
