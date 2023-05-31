@@ -12,9 +12,9 @@ class Solution:
         word2_dequeue = collections.deque(word2)
 
         while word1_dequeue or word2_dequeue:
-            if word1:
+            if word1_dequeue:
                 result += word1_dequeue.popleft()
-            if word2:
+            if word2_dequeue:
                 result += word2_dequeue.popleft()
             
         return result
