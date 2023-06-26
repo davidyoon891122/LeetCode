@@ -13,7 +13,6 @@ class Solution:
         for char in s:
             if char.lower() in vowels:
                 vowels_list.append(char)
-        print(vowels_list)
         
         for index in range(len(s)):
             if s[index].lower() in vowels:
@@ -21,7 +20,6 @@ class Solution:
             else:
                 result += s[index]
         
-        print(result)
         return result
 
 
