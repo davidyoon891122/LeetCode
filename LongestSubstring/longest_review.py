@@ -6,18 +6,17 @@ Given a string s, find the length of the longest substring without repeating cha
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        map = {}
-        result = 0
-        start = 0
+        hash_map = {}
+        res, start = 0, 0
 
-        for i, char in enumerate(s):
-            if char in map:
-                result = max(result, i - start)
-                start = max(start, map[char] + 1)
-                # print(result, start)
-            map[char] = i
-        
-        return max(result, len(s) - start)
+        for i, ch in enumerate(s):
+            if ch in hash_map and hash_map[ch] + 1 > start:
+                start = hash_map[ch] + 1
+            hash_map[ch] = i
+
+            res = max(res, i - start + 1)
+            print("result: {}, start: {}".format(res, start))
+        return res
     
 
 
