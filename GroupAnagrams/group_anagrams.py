@@ -11,15 +11,13 @@ class Solution:
         word_ditionary = {}
 
         for word in strs:
-            print(sorted(word))
             if "".join(sorted(word)) in word_ditionary:
                 word_ditionary["".join(sorted(word))].append(word)
             else:
                 word_ditionary["".join(sorted(word))] = [word]
 
         result = list(word_ditionary.values())
-
-        print(result)
+        return result
 
 
 
