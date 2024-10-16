@@ -16,15 +16,12 @@ class Solution:
 
         current_char = ''
 
-        for char in char_arr:
-            if char == '':
+        for i in range(1, len(char_arr)):
+            if char_arr[i] == '':
                 return 
             else:
-                current_char = char
-                if int(char)
-
-
-
+                current_char = char_arr[i - 1]
+                print(current_char)
 
 s = Solution()
 
