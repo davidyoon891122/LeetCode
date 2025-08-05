@@ -26,8 +26,8 @@ class Solution:
               l2 = l2.next
 
           carry, val = divmod(sum + carry, 10)
-          newNode = ListNode(val)
-          currentNode.next = newNode
+          currentNode.next = ListNode(val)
+          currentNode = currentNode.next
 
       return head.next
       
