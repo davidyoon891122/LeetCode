@@ -1,0 +1,29 @@
+"""
+Given an integer array nums of unique elements, return all possible subsets (the power set).
+
+The solution set must not contain duplicate subsets. Return the solution in any order.
+"""
+
+from typing import List
+
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        result = []
+        
+        def dfs(index, path):
+          
+          result.append(path)
+          print(result)
+          for i in range(index, len(nums)):
+            dfs(i + 1, path + [nums[i]])
+            print("{}, {}".format(i+1, path + [nums[i]]))
+            
+        dfs(0, [])
+        
+        return result
+      
+      
+s = Solution()
+
+print(s.subsets([1,2,3]))
+      
