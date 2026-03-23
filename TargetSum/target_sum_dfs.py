@@ -11,24 +11,16 @@ from typing import List
 
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
-        count = 0
-        
-        def dfs(index, total):
-          nonlocal count
-          
+        def dfs(index, total):          
           if index == len(nums):
-            if total == target:
-              count += 1
-            return
+            return 1 if total == target else 0
           
-          dfs(index + 1, total + nums[index])  # 1, 1 -> 2, 2, 2, 0
-          dfs(index + 1, total - nums[index])  # 1, -1 -> 2, -2, 2, 0
-          
-        dfs(0, 0)
+          return (
+            dfs(index + 1, total + nums[index]) +
+            dfs(index + 1, total - nums[index])
+          )
         
-        return count 
-        
-        
+        return dfs(0,0)
 
 
 nums = [1, 1, 1, 1, 1]
