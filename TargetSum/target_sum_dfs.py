@@ -1,5 +1,8 @@
 """
+<<<<<<< HEAD
 494. Target Sum
+=======
+>>>>>>> 704b59b953421db6a96a48c892a8a0ec03945800
 You are given an integer array nums and an integer target.
 
 You want to build an expression out of nums by adding one of the symbols '+' and '-' before each integer in nums and then concatenate all the integers.
@@ -32,3 +35,13 @@ class Solution:
 s = Solution()
 
 print(s.findTargetSumWays([1, 1, 1], 1))  # Output: 5
+
+
+
+
+nums = [1, 1, 1, 1, 1]
+target = 3  # (target + totalSum) / 2  -> 4
+
+s = Solution()
+
+print(s.findTargetSumWays(nums, target))
